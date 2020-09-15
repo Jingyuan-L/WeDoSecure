@@ -1,2 +1,2 @@
 # WeDoSecure
- An insurance database system web application based on Django 
+ An insurance database system web application based on Flask
