@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeDoSecure-CustomerEnrollment</title>
+</head>
+<body>
+
+    <div align="center">
+      <h1>Customer Information</h1>
+    </div>
+    <div style="font-family:verdana;width:250px;margin:0px auto;font-size:16px;">
+      <form method="POST" action="/enrollment">
+        <p>----- For All Customer:-----</p><br>
+        <label>customer id(8 digits):</label><br>
+        <input type="text" name="customer_id" value="11111111" size="30" /><br>
+        <label>password:</label><br>
+        <input type="text" name="password" value="test" size="30" /><br>
+        <label>full name:</label><br>
+        <input type="text" name="full_name" value="test" size="30" /><br>
+        <label>address:</label><br>
+        <input type="text" name="address" value="test" size="30" /><br>
+        <label>gender:</label><br>
+        <input type="radio" name="gender" value="M" checked="checked"/>Male
+        <input type="radio" name="gender" value="F"/>Female<br>
+          <label>marital status:</label><br>
+        <input type="radio" name="marital_status" value="S" checked="checked"/>single<br>
+        <input type="radio" name="marital_status" value="M"/>married<br>
+        <input type="radio" name="marital_status" value="W"/>widow/widower<br>
+        <label>customer type:</label><br>
+        <input type="radio" name="customer_type" value="H"/>Home Insurance<br>
+        <input type="radio" name="customer_type" value="A"/>Auto Insurance<br>
+        <input type="radio" name="customer_type" value="B" checked="checked"/>Both Insurance<br>
+        <p>--- For Home Insurance:---</p><br>
+        <label>start date:</label><br>
+        <input type="Date" name="h_start_date"/><br>
+        <label>end date:</label><br>
+        <input type="date" name="h_end_date" /><br>
+        <label>premium amount:</label><br>
+        <input type="number" name="h_premium_amount" value="100"/><br>
+        <label>policy status:</label><br>
+        <input type="radio" name="h_policy_status" value="C" checked="checked" />Current<br>
+        <input type="radio" name="h_policy_status" value="P"/>Expired<br>
+        <label>home purchase date:</label><br>
+        <input type="date" name="purchase_date" /><br>
+        <label>home purchase value:</label><br>
+        <input type="number" name="purchase_value" value="1000000"/><br>
+        <label>home area(sqft):</label><br>
+        <input type="number" name="area_sqft" value="1000"/><br>
+        <label>home type:</label><br>
+        <input type="radio" name="home_type" value="S" checked="checked"/>single family<br>
+        <input type="radio" name="home_type" value="M" />multi family<br>
+        <input type="radio" name="home_type" value="C" />condominium<br>
+        <input type="radio" name="home_type" value="T" />town house<br>
+        <label>auto fire notification:</label><br>
+        <input type="radio" name="auto_fire_notif" value="Y" checked/>yes<br>
+        <input type="radio" name="auto_fire_botif" value="N" />no<br>
+        <label>security system:</label><br>
+        <input type="radio" name="security_sys" value="Y" checked="checked"/>yes<br>
+        <input type="radio" name="security_sys" value="N" />no<br>
+        <label>swimming pool:</label><br>
+        <input type="radio" name="swimming_pool" value="U" />underground<br>
+        <input type="radio" name="swimming_pool" value="O" />overground<br>
+        <input type="radio" name="swimming_pool" value="I" />indoor<br>
+        <input type="radio" name="swimming_pool" value="M" />multiple<br>
+        <input type="radio" name="swimming_pool" value="N" checked="checked"/>no swimming pool<br>
+        <label>basement:</label><br>
+        <input type="radio" name="basement" value="Y" checked="checked"/>yes<br>
+        <input type="radio" name="basement" value="N" />no<br>
+        <p>--- For Auto Insurance:---</p><br>
+        <label>start date:</label><br>
+        <input type="Date" name="a_start_date"/><br>
+        <label>end date:</label><br>
+        <input type="date" name="a_end_date"/><br>
+        <label>premium amount:</label><br>
+        <input type="number" name="a_premium_amount" value="100" size="30" /><br>
+        <label>policy satus:</label><br>
+        <input type="radio" name="a_policy_status" value="C" checked="checked"/>Current<br>
+        <input type="radio" name="a_policy_status" value="P"/>Expired<br>
+        <label>vehicle VIN(12 digits):</label><br>
+        <input type="text" name="vin" size="30"value="111111111111" /><br>
+        <label>vehicle make model year:</label><br>
+        <input type="text" name="model_year" value="2010" size="30" /><br>
+        <label>vehicle status:</label><br>
+        <input type="radio" name="vehicle_status" value="L" />leased<br>
+        <input type="radio" name="vehicle_status" value="F" />financed<br>
+        <input type="radio" name="vehicle_status" value="O" checked="checked"/>owned<br>
+        <label>driver license number(12 digits):</label><br>
+        <input type="text" name="license_num" value="222222222222" size="30" /><br>
+        <label>driver name:</label><br>
+        <input type="text" name="driver_name" value="test" size="30" /><br>
+        <label>driver birthday:</label><br>
+        <input type="date" name="driver_birthday" /><br>
+
+        <p align="center">
+          <input type="submit" value='submit'/>
+        </p>
+      </form>
+    </div>
+
+</body>
+</html>

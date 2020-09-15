@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center" style="float:left;width:200px;height:800px;background:lightblue;">
+        <div style="font-family:verdana;background:#A8C6E5;height:25px;border:1px solid white;">
+          <a href="/information/{{ customer_id }}">Information</a>
+        </div>
+        <div style="font-family:verdana;background:#A8C6E5;height:25px;border:1px solid white;">
+          <a href="/payment/{{ customer_id }}">Payment</a>
+        </div>
+</div>
+<div style="margin-left:200px;margin:0px auto;width:400px;">
+
+    <h3>Home Insurance Payment</h3>
+    {% if h_pay %}
+        <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <td>id</td> <td>amount</td> <td>payment date</td> <td>payment method</td> <td>invoice id</td>
+        </tr>
+            {% for pay in h_pay %}
+                <tr>
+                <td>{{ pay.h_payment_id }}</td> <td>{{ pay.h_pay_amount }}</td> <td>{{ pay.h_payment_date }}</td>
+                    <td>{{ pay.h_payment_method }}</td> <td>{{ pay.h_invoice_id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+<br>
+<label>Home Insurance amount to be paid:</label>{{ h_need_pay }}<br>
+<label>Invoice ID:</label> {{ h_inv.h_invoice_id }}<br>
+    <h3>Auto Insurance Payment</h3>
+    {% if a_pay %}
+        <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <td>id</td> <td>amount</td> <td>payment date</td> <td>payment method</td> <td>invoice id</td>
+        </tr>
+            {% for pay in a_pay %}
+                <tr>
+                <td>{{ pay.a_payment_id }}</td> <td>{{ pay.a_pay_amount }}</td> <td>{{ pay.a_payment_date }}</td>
+                    <td>{{ pay.a_payment_method }}</td> <td>{{ pay.a_invoice_id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+<br>
+        <label>Auto Insurance amount to be paid:</label>{{ a_need_pay }}<br>
+<label>Invoice ID:</label> {{ a_inv.a_invoice_id }}<br>
+
+<h3>Make a payment</h3>
+    <form method="post" action="/payment/{{ customer_id }}">
+        <label>Pay for which Insurance:</label><br>
+        <input type="radio" name="ins_type" value="A">auto insurance<br>
+        <input type="radio" name="ins_type" value="H">home insurance<br>
+        <label>Invoice ID:</label>
+        <input type="number" name="invoice_id"><br>
+        <label>Payment method:</label><br>
+        <input type="radio" name="payment_method" value="Paypal">Paypal<br>
+        <input type="radio" name="payment_method" value="Credit">Credit<br>
+        <input type="radio" name="payment_method" value="Debit">Debit<br>
+        <input type="radio" name="payment_method" value="Check">Check<br>
+        <label>New payment amount:</label><br>
+        <input type="number" name="payment_amount"><br>
+        <input type="submit" value="Pay">
+    </form>
+</div>
+</body>
+</html>

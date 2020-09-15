@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeDoSecure-CustomerInformation</title>
+</head>
+<body>
+<div align="center" style="float:left;width:200px;height:800px;background:lightblue;">
+
+        <div style="font-family:verdana;background:#A8C6E5;height:25px;border:1px solid white;">
+          <a href="/information/{{ customer_form.customer_id }}">Information</a>
+        </div>
+        <div style="font-family:verdana;background:#A8C6E5;height:25px;border:1px solid white;">
+          <a href="/payment/{{ customer_form.customer_id }}">Payment</a>
+        </div>
+      </div>
+
+      <div style="margin-left:200px;margin:0px auto;width:200px;">
+          <p>
+              <h3>Customer Information</h3>
+              <label>customer id(8 digits):</label><br>
+              {{ customer_form.customer_id }}<br>
+              <label>full name:</label><br>
+              {{ customer_form.full_name }}<br>
+              <label>address:</label><br>
+              {{ customer_form.address }}<br>
+              <label>gender:</label><br>
+              {{ customer_form.gender }}<br>
+              <label>marital status:</label><br>
+              {{ customer_form.marital_status }}<br>
+              <label>customer type:</label><br>
+              {{ customer_form.customer_type }}<br>
+          </p>
+        <form method="post" action="/information/{{ customer_form.customer_id }}">
+        <p>----- Update Imformation -----</p><br>
+            <label>customer id(8 digits):</label><br>
+            <input type="text" name="customer_id" size="30" readonly="readonly" value={{ customer_form.customer_id }} /><br>
+            <label>password:</label><br>
+            <input type="text" name="password" size="30" /><br>
+            <label>full name:</label><br>
+            <input type="text" name="full_name" size="30" /><br>
+            <label>address:</label><br>
+            <input type="text" name="address" size="30" /><br>
+            <label>gender:</label><br>
+            <input type="radio" name="gender" value="M"/>Male
+            <input type="radio" name="gender" value="F"/>Female<br>
+            <label>marital status:</label><br>
+            <input type="radio" name="marital_status" value="S"/>single<br>
+            <input type="radio" name="marital_status" value="M"/>married<br>
+            <input type="radio" name="marital_status" value="W"/>widow/widower<br>
+            <label>customer type:</label><br>
+            <input type="radio" name="customer_type" value="H"/>Home Insurance<br>
+            <input type="radio" name="customer_type" value="A"/>Auto Insurance<br>
+            <input type="radio" name="customer_type" value="B"/>Both Insurance<br>
+
+        <p align="center">
+          <input type="submit" value='update'/>
+        </p>
+      </form>
+          {% if msg %}
+          {{ msg }}
+          {% endif %}
+      </div>
+</body>
+</html>

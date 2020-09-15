@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeDoSecure-AdminPage</title>
+</head>
+<body>
+<div align="center">
+  <h2>Admin Management</h2>
+  <p>
+  <form method="post" action="/table">
+  <label>choose table:</label>
+  <select name="table_name">
+    <option value="customer">customer</option>
+    <option value="auto_insurance">auto_insurance</option>
+    <option value="auto_invoice">auto_invoice</option>
+    <option value="a_ins_payment">a_ins_payment</option>
+    <option value="vehicle">vehicle</option>
+    <option value="driver">driver</option>
+    <option value="home_insurance">home_insurance</option>
+    <option value="home_invoice">home_invoice</option>
+    <option value="h_ins_payment">h_ins_payment</option>
+    <option value="home">home</option>
+  </select>
+    <input type="submit" value="show table">
+  </form>
+
+  <p>
+  <form method="post" action="/admin_delete_customer">
+    <label>customer_id:</label>
+    <input type="number" name="customer_id">
+    <input type="submit" value="delete customer information">
+  </form>
+  </P>
+    {% if msg %}
+    {{ msg }}
+    {% endif %}
+  </div>
+
+</body>
+</html>
